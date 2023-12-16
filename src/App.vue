@@ -1,5 +1,6 @@
 <script setup>
 
+
 import { reactive } from 'vue';
 
 
@@ -34,24 +35,40 @@ const resultado = () => {
 </script>
 
 <template>
-  <div class="container d-flex mt-5 flex-column w-100 bg-light">
+  <body>
+  <div class="container d-flex mt-5 flex-column w-100 ">
     <h1 class="text-center mt-5">Calculadora</h1>
-    <input v-model="estado.num1" class="w-25 text-center mt-5 mx-auto" type="number" placeholder="Digite um número">
+    <input v-model="estado.num1" class=" text-center mt-5 mx-auto rounded-4" type="number" placeholder="Digite um número">
     <label class="w-10 text-center mt-5 mx-auto">
-      Selecione uma operação
-      <select v-model="operacao" class="w-100">
+      <div>
+      <strong>Selecione uma operação</strong>
+      </div>
+      <select v-model="operacao" class="w-90 rounded-4 text-center border-3">
         <option value="soma">Soma +</option>
         <option value="multiplicacao">Multiplicação x</option>
         <option value="divisao">Divisão /</option>
       </select>
     </label>
-    <input v-model="estado.num2" class="w-25 text-center mt-5 mx-auto" type="number" placeholder="Digite um número">
+    <input v-model="estado.num2" class=" text-center mt-5 mx-auto rounded-4" type="number" placeholder="Digite um número">
 
     <div class="p-2 mt-5 mb-5 mx-auto rounded-4 bg-info text-white">
       <div>A resposta é :</div>
       <div class="text-center fs-2">{{ resultado() }}</div>
     </div>
   </div>
+  </body>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+body{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/image/imagem-fundo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+</style>
